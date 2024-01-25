@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    .sol {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        /* transforma a forma em um círculo */
+        background: linear-gradient(#FFD600, #FFA700);
+        /* gradiente amarelo-laranja */
+        box-shadow: 0 0 40px rgba(255, 215, 0, 0.3);
+        /* sombra suave */
+
+        /* código anterior aqui 
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        /*centraliza a div */
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        /* centraliza verticalmente */
+        align-items: center;
+    }
+</style>
+
+<body>
+
+    <div class="container">
+        <div class="sol" id="sol"></div>
+        <button id="alterar-cor-btn">Alterar cor</button>
+    </div>
+
+    <script>
+        const alterarCorBtn = document.getElementById('alterar-cor-btn');
+        const sol = document.getElementById('sol');
+
+        alterarCorBtn.addEventListener('click', function () {
+            // gera duas cores aleatórias
+            const corAleatoria1 = '#' + Math.floor(Math.random() * 16777215).toString(16);
+            const corAleatoria2 = '#' + Math.floor(Math.random() * 16777215).toString(16);
+            sol.style.background = `linear-gradient(${corAleatoria1}, ${corAleatoria2})`;
+        });
+    </script>
+
+</body>
+
+</html>

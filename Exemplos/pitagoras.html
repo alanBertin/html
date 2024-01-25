@@ -1,0 +1,77 @@
+<html>
+
+<head>
+    <style>
+        .triangle {
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 50px 100px 0 100px;
+            border-color: transparent transparent transparent blue;
+        }
+    </style>
+</head>
+
+<style>
+    button {
+        background-color: #4CAF50;
+        /* Cor de fundo do botão */
+        border: none;
+        /* Remove a borda */
+        color: white;
+        /* Cor da fonte */
+        padding: 15px 32px;
+        /* Espaçamento interno */
+        text-align: center;
+        /* Alinhamento do texto */
+        text-decoration: none;
+        /* Remove a decoração do texto */
+        display: inline-block;
+        /* Posiciona o botão como um elemento inline */
+        font-size: 16px;
+        /* Tamanho da fonte */
+        margin: 4px 2px;
+        /* Margem do botão */
+        cursor: pointer;
+        /* Transforma o ponteiro do mouse em uma mãozinha */
+        border-radius: 8px;
+        /* Arredonda as bordas do botão */
+    }
+
+    button:hover {
+        /* Estilo do botão quando o mouse estiver em cima */
+        background-color: #45a049;
+    }
+</style>
+
+<body>
+
+    <div class="triangle"></div>
+    <p>a<sup>2</sup> + b<sup>2</sup> = c<sup>2</sup></p>
+
+    <form>
+        <label for="a">Lado a:</label><br>
+        <input type="text" id="a" name="a"><br>
+        <label for="b">Lado b:</label><br>
+        <input type="text" id="b" name="b"><br><br>
+        <button type="button" onclick="calculate()">Calcular</button>
+    </form>
+
+    <p id="result"></p>
+
+    <script>
+        function pitagoras(a, b) {
+            return Math.sqrt(a * a + b * b);
+        }
+
+        function calculate() {
+            let a = document.getElementById("a").value;
+            let b = document.getElementById("b").value;
+            let c = pitagoras(a, b);
+            document.getElementById("result").innerHTML = "A hipotenusa é " + c;
+        }
+    </script>
+
+</body>
+
+</html>
